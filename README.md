@@ -1,1 +1,1 @@
-# RayTracing-project
+# RayTracing Project
