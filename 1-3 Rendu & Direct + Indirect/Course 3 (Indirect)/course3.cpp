@@ -280,7 +280,7 @@ int main() {
 
             Vector color(0,0,0);
             for (int k=0; k<nrays; k++){
-                 double r1 = uniform(engine);
+                double r1 = uniform(engine);
                 double r2 =uniform(engine);
 
                 double dx = 0.25*sqrt(-2*log(r1))*cos(2*M_PI*r2);
@@ -292,14 +292,16 @@ int main() {
                 color += s.getColor(r, 0);
             }
             color = color / nrays;
-            image[((H - i - 1)* W + j) * 3 + 0] = std::min(255., std::pow(color[0], 0.45));
-            image[((H - i - 1)* W + j) * 3 + 1] = std::min(255., std::pow(color[1], 0.45));
-            image[((H - i - 1)* W + j) * 3 + 2] = std::min(255., std::pow(color[2], 0.45));
+            image[((H - i - 1)* W + j) * 3 + 0] = std::min(255., std::pow(color[0], 1/2.2));
+            image[((H - i - 1)* W + j) * 3 + 1] = std::min(255., std::pow(color[1], 1/2.2));
+            image[((H - i - 1)* W + j) * 3 + 2] = std::min(255., std::pow(color[2], 1/2.2));
 
              //std::min(255., std::max(0., intensite_pixel));
             }
         }
+    cout << "Saving the image" << endl;
     stbi_write_png("image.png", W, H, 3, &image[0], 0);
+    cout << "Finished saving. Check it!" << endl;
 
     return 0;
 }
