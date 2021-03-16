@@ -262,7 +262,9 @@ int main() {
             //std::min(255., std::max(0., intensite_pixel));
         }
     }
+    cout << "Saving the image" << endl;
     stbi_write_png("image.png", W, H, 3, &image[0], 0);
+    cout << "Finished saving. Check it!" << endl;
 
     return 0;
 }
