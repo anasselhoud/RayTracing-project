@@ -1,6 +1,6 @@
 # RayTracing Project
 
-MOS 2.2 Informatique Graphique - Ecole Centrale de Lyon.
+
 
 Final result:
 
