@@ -17,16 +17,6 @@
 #include <random>
 static std::default_random_engine engine(10);
 static std::uniform_real_distribution<double> uniform(0,1);
-
- class TriangleIND {
-    public:
-    TriangleIND(int vtxi = -1, int vtxj = -1, int vtxk = -1, int ni = -1, int nj = -1, int nk = -1, int uvi = -1, int uvj = -1, int uvk = -1, int group = -1, bool added = false) : vtxi(vtxi), vtxj(vtxj), vtxk(vtxk), uvi(uvi), uvj(uvj), uvk(uvk), ni(ni), nj(nj), nk(nk), group(group) {
-    };
-    int vtxi, vtxj, vtxk; // indices within the vertex coordinates array
-    int uvi, uvj, uvk;  // indices within the uv coordinates array
-    int ni, nj, nk;  // indices within the normals array
-    int group;       // face group
-};
  
  class Vector {
  public:
@@ -96,6 +86,17 @@ private:
  double sqr(const float a){
     return a*a;
 }
+
+
+class TriangleIND {
+    public:
+    TriangleIND(int vtxi = -1, int vtxj = -1, int vtxk = -1, int ni = -1, int nj = -1, int nk = -1, int uvi = -1, int uvj = -1, int uvk = -1, int group = -1, bool added = false) : vtxi(vtxi), vtxj(vtxj), vtxk(vtxk), uvi(uvi), uvj(uvj), uvk(uvk), ni(ni), nj(nj), nk(nk), group(group) {
+    };
+    int vtxi, vtxj, vtxk; 
+    int uvi, uvj, uvk;  
+    int ni, nj, nk;  
+    int group;     
+};
 
 Vector random_cos(const Vector &N){
 	double r1 = uniform(engine);
